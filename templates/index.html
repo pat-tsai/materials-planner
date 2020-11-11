@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale=1>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>myMRP</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../static/js/script.js"></script>
+</head>
+
+<body class="bg-light">
+    <div class="wrapper">
+        <nav class="navbar navbar-light bg-light navbar-expand-lg">
+            <a href="/" id="button1">Homepage</button>
+            <a href="/outputs/output.csv" id="button2" download>DownloadCSV</a>
+            <a href="output.csv" id="button3">UserGuide</a>
+
+        </nav>
+    </div>
+    <div class="jumbotron">Material Requirements Planner
+    </div>
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <h4>Search by SMC Product ID<br></h4>
+        <h5>format: SKU, quantity</h5>
+      </div>
+      <div class="col-md-5">
+          <form action="/system_sku_search" method="POST" class="bg-light">
+            <ul class="list-group bg-light">
+                <li class="list-group-item bg-light">
+                    <label for="sku">Enter SKU</label>
+                    <input style="width:400px" type="text" name="product_sku" placeholder="(ie. SYS-620P-TRT --> material requirements for 1 unit)" id="product_sku" value={{request.form.product_sku}} >
+                </li>
+            </ul>
+          </form>
+      </div>
+      <p>or</p>
+        <div class="col-md-4">
+                    <form action="/search_quote_items" class="bg-light">
+            <ul class="list-group bg-light">
+                <li class="list-group-item bg-light">
+                    <label for="quote">Enter Quote(86-)</label>
+                    <input type="text" name = "quote_num" placeholder="(ie. 8612345678)" id="sap_quote" />
+                </li>
+              </ul>
+            </form>
+        </div>
+      </div>
+      <div class="space">
+                <!-- Choose/upload csv input -->
+        <form action="/action_page.php">
+          <input type="file" id="myFile" name="filename">
+          <input type="submit">
+        </form>
+      </div>
+        <div class="row"><br></div>
+      <div class="row">
+            <div class="container1"  style="padding-left: 10px;" >
+              <button class="add_form_field">Add New Field &nbsp;
+              <span style="font-size:16px; font-weight:bold;">+ </span>
+              </button>
+              <div>
+                <input type="text" name="mytext[]" placeholder="SKU, quantity">
+              </div>
+            </div>
+          <div class="col-md-9">
+              <h2> 8600419143 </h2>
+<table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Demanded Qty</th>
+      <th>Net OH Qty</th>
+      <th>BO</th>
+      <th>BO ETA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AOC-S3108L-H8IR</th>
+      <td>1</td>
+      <td>19</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>BTR-CV3108-U1</th>
+      <td>1</td>
+      <td>33</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>EWCSC</th>
+      <td>1</td>
+      <td>0</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>FAN-0166L4</th>
+      <td>4</td>
+      <td>2904</td>
+      <td>1600</td>
+      <td>12/17/2020(0/600)</td>
+    </tr>
+    <tr>
+      <th>HDS-S2T1-MZ7LH1T9HMLT05</th>
+      <td>16</td>
+      <td>1703</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>MC0037</th>
+      <td>1</td>
+      <td>0</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>MEM-DR464L-CL01-ER29</th>
+      <td>24</td>
+      <td>5268</td>
+      <td>5600</td>
+      <td>11/27/2020(0/600); None</td>
+    </tr>
+    <tr>
+      <th>OSNBD3</th>
+      <td>1</td>
+      <td>0</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>P4X-CLX6248R-SRGZG</th>
+      <td>2</td>
+      <td>533</td>
+      <td>1828</td>
+      <td>12/31/2020(0/28); 12/31/2020(0/200); 12/31/2020(0/200); 12/31/2020(0/200)</td>
+    </tr>
+    <tr>
+      <th>SFT-DCMS-SINGLE</th>
+      <td>1</td>
+      <td>0</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>SYS-2029U-E1CR4</th>
+      <td>1</td>
+      <td>0</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<input type="button" value="select table" onclick="copyTable();">
+
+        </div>
+      </div>
+          <script src="../static/js/script.js"></script>
+
+<div class="row"><br></div>
+</body>
+</html>

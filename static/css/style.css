@@ -1,0 +1,114 @@
+body {
+  color: #1C2833;
+}
+
+.navbar{
+    padding-bottom: 0rem;
+}
+
+#myFile{
+    width: 225px;
+}
+
+#button1{
+    background: #2fe010;
+    border-radius: 25px;
+    width: 105px;
+    margin: 1px 1px 0px 1px;
+    text-align: center;
+    position: relative;
+    color: #000000;
+    font-variant: small-caps;
+}
+
+#button2{
+    color: #000000;
+    background: #e06a10;
+    border-radius: 25px;
+    width: 155px;
+    margin: 1px 1px 0px 1px;
+    text-align: center;
+    position: relative;
+    color: #000000;
+    font-variant: small-caps;
+}
+
+#button3{
+    background: #c110e0;
+    border-radius: 25px;
+    width: 200px;
+    margin: 1px 1px 0px 3px;
+    text-align: center;
+    position: relative;
+    color: #000000;
+    font-variant: small-caps;
+}
+
+.row .container1{
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
+
+.space {
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-bottom: 15px;
+    border-style: double;
+    width: 370px;
+}
+
+
+p {
+    padding-top: 17px;
+}
+
+.jumbotron {
+  color: #f7f7f7;
+  text-align: justify;
+  text-justify: inter-word;
+  max-height: 50px;
+  font-size: 45px !important;
+  padding-top: 30px;
+  padding-bottom: 70px;
+  background-image: url("../images/black.png");
+  background-size: 100% 100%;
+}
+
+h4 {
+    font-size: 16.5px;
+}
+
+h5 {
+    font-size: 13.5px;
+}
+
+h2 {
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 200px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 90%;
+}
+table tbody tr:hover {
+    background-color: #dddddd;
+}
+.wide {
+    width: 90%;
+}
+
+th{
+    width: 150px;
+}

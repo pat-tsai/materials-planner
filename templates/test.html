@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale=1>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../static/js/script.js"></script>
+</head>
+
+<body class="bg-light">
+    <div class="wrapper">
+        <nav class="navbar navbar-light bg-light navbar-expand-lg">
+            <button type="submit" onClick="refreshPage()" id="button1">Refresh</button>
+            <a href="outputs/output.csv" id="button2" download>DownloadCSV</a>
+            <a class="navbar-brand" href="output.csv" id="button3">UserGuide</a>
+
+        </nav>
+    </div>
+    <div class="jumbotron">Material Requirements Planner
+    </div>
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <h4>Search by SMC Product ID<br></h4>
+        <h5>format: SKU, quantity</h5>
+      </div>
+      <div class="col-md-5">
+          <form action="/search_results" method="POST" class="bg-light">
+            <ul class="list-group bg-light">
+                <li class="list-group-item bg-light">
+                    <label for="sku">Enter SKU</label>
+                    <input style="width:400px" type="text" name="product_sku" placeholder="(ie. SYS-620P-TRT --> material requirements for 1 unit)" id="product_sku" value={{request.form.product_sku}} >
+                </li>
+            </ul>
+          </form>
+      </div>
+      <p>or</p>
+        <div class="col-md-4">
+                    <form class="bg-light">
+            <ul class="list-group bg-light">
+                <li class="list-group-item bg-light">
+                    <label for="quote">Enter Quote(86-)</label>
+                    <input type="text" placeholder="(ie. 8612345678)" id="sap_quote" />
+                </li>
+              </ul>
+            </form>
+        </div>
+      </div>
+      <div class="space">
+                <!-- Choose/upload csv input -->
+        <form action="/action_page.php">
+          <input type="file" id="myFile" name="filename">
+          <input type="submit">
+        </form>
+      </div>
+      <div class="row">
+            <div class="container1"  style="padding-left: 10px;" >
+              <button class="add_form_field">Add New Field &nbsp;
+              <span style="font-size:16px; font-weight:bold;">+ </span>
+              </button>
+              <div>
+                <input type="text" name="mytext[]" placeholder="SKU, quantity">
+              </div>
+            </div>
+          <div class="col-md-9">
+              <h2>  </h2>
+<table border="1" class="dataframe wide">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Qty Needed</th>
+      <th>Net OH Qty</th>
+      <th>BO</th>
+      <th>BO ETA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AOC-2UR68-I2XS</th>
+      <td>1</td>
+      <td>240</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>BPN-SAS3-216EL1-N4</th>
+      <td>1</td>
+      <td>1176</td>
+      <td>420</td>
+      <td>11/30/2020 ( 0 / 400 ); None</td>
+    </tr>
+    <tr>
+      <th>CBL-PWEX-0673</th>
+      <td>3</td>
+      <td>9064</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>CBL-SAST-0593</th>
+      <td>2</td>
+      <td>14771</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>CSE-219U2TS-R1K02P-T</th>
+      <td>1</td>
+      <td>0</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>LBL-0108</th>
+      <td>1</td>
+      <td>53410</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>LBL-1137-QRG</th>
+      <td>1</td>
+      <td>142</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>MBD-X11DPU-P</th>
+      <td>1</td>
+      <td>3780</td>
+      <td>3825</td>
+      <td>11/07/2020 ( 0 / 152 ); 10/23/2020 ( 0 / 86 ); 12/30/2020 ( 0 / 17 ); 10/30/2020 ( 0 / 648 ); 11/07/2020 ( 0 / 53 ); 11/07/2020 ( 0 / 38 ); 11/07/2020 ( 0 / 58 ); 11/07/2020 ( 0 / 55 ); 10/23/2020 ( 0 / 255 ); 10/23/2020 ( 0 / 443 ); 12/30/2020 ( 0 / 1 ); 12/30/2020 ( 0 / 496 ); 11/07/2020 ( 0 / 25 ); 11/07/2020 ( 0 / 123 ); 11/21/2020 ( 0 / 371 ); 11/21/2020 ( 0 / 385 )</td>
+    </tr>
+    <tr>
+      <th>MCP-240-82910-0N</th>
+      <td>1</td>
+      <td>6</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>MCP-310-82921-0N</th>
+      <td>1</td>
+      <td>3585</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>MCP-310-82922-0N</th>
+      <td>1</td>
+      <td>3613</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>RSC-R1UW-E8R</th>
+      <td>1</td>
+      <td>16497</td>
+      <td>4541</td>
+      <td>10/25/2020 ( 3459 / 4000 ); 11/15/2020 ( 0 / 4000 )</td>
+    </tr>
+    <tr>
+      <th>RSC-R2UW-4E8</th>
+      <td>1</td>
+      <td>4690</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>SNK-P0068PS</th>
+      <td>2</td>
+      <td>9255</td>
+      <td>4320</td>
+      <td>10/30/2020 ( 0 / 720 ); 11/30/2020 ( 0 / 1440 ); 11/30/2020 ( 0 / 2160 )</td>
+    </tr>
+  </tbody>
+</table>
+
+        </div>
+      </div>
+<div class="row"><br></div>
+</body>
+</html>
